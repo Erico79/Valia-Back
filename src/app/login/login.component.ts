@@ -4,7 +4,7 @@ import {Title} from '@angular/platform-browser';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['../../assets/css/material-kit.css']
 })
 export class LoginComponent implements OnInit {
   constructor(private title: Title) {}
