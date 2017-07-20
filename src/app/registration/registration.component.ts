@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  styleUrls: ['../../assets/css/material-kit.css']
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private title: Title) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.title.setTitle('Register');
   }
 
 }
