@@ -72,7 +72,7 @@
 										<span class="input-group-addon">
 											<i class="material-icons">face</i>
 										</span>
-                    <input type="text" class="form-control" placeholder="First Name..." required>
+                    <input type="text" name="first_name" class="form-control" placeholder="First Name..." required>
 
 										<span class="input-group-addon">
 											<i class="material-icons">face</i>
@@ -84,24 +84,25 @@
 										<span class="input-group-addon">
 											<i class="material-icons">email</i>
 										</span>
-                    <input type="email" class="form-control" placeholder="Email...">
+                    <input type="email" name="email" class="form-control" placeholder="Email..." required>
 
 										<span class="input-group-addon">
 											<i class="material-icons">phone</i>
 										</span>
-                    <input type="number" placeholder="Mobile Number..." class="form-control" />
+                    <input type="number" name="mobile_no" placeholder="Mobile Number. Example, 0712345678" class="form-control" required/>
                   </div>
 
                   <div class="input-group">
 										<span class="input-group-addon">
 											<i class="material-icons">lock</i>
 										</span>
-                    <input type="password" class="form-control" placeholder="Password...">
+                    <input type="password" name="password" class="form-control" placeholder="Password..." minlength="6">
 
 										<span class="input-group-addon">
 											<i class="material-icons">lock</i>
 										</span>
-                    <input type="password" placeholder="Repeat Password..." class="form-control" />
+                    <input type="password" name="confirm_password" #confirm_password (keyup)="checkPassword(confirm_password.value)"
+                           placeholder="Repeat Password..." class="form-control" />
                   </div>
 
                   <p class="text-divider">Shop Name</p>
@@ -110,7 +111,7 @@
 										<span class="input-group-addon">
 											<i class="material-icons">home</i>
 										</span>
-                    <input type="text" class="form-control" placeholder="Enter your shop's name...">
+                    <input type="text" class="form-control" name="shop_name" placeholder="Enter your shop's name...">
                   </div>
 
                   <div class="input-group">
@@ -130,7 +131,7 @@
                                     <!--</div> &ndash;&gt;-->
                 </div>
                 <div class="footer text-center">
-                  <a href="#pablo" class="btn btn-simple btn-primary btn-lg" style="color: #9c27b0;">Register</a>
+                  <button href="#pablo" class="btn btn-success btn-lg">Register</button>
                 </div>
               </form>
             </div>
