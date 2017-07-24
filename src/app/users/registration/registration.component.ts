@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from '@angular/platform-browser';
 
-import {User} from './user';
+import {Seller} from './seller';
 
 @Component({
   selector: 'app-registration',
@@ -10,7 +10,7 @@ import {User} from './user';
 })
 export class RegistrationComponent implements OnInit {
   private pass_match: boolean;
-  // model = new User();
+  seller = new Seller('Eric', 'Murimi Njue', 'emurinyo@gmail.com', '0718513948', 'pass123', 'pass123', 'Ricoz Fashion', true);
 
   constructor(private title: Title) {
     this.pass_match = false;

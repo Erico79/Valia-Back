@@ -52,7 +52,7 @@
             <div class="card card-signup">
               <form class="form">
                 <div class="header header-primary text-center">
-                  <h4>Sign Up</h4>
+                  <h4>Register to Sell</h4>
                   <!--<div class="social-line">-->
                     <!--<a href="#pablo" class="btn btn-simple btn-just-icon">-->
                     <!--<i class="fa fa-facebook-square"></i>-->
@@ -72,36 +72,36 @@
 										<span class="input-group-addon">
 											<i class="material-icons">face</i>
 										</span>
-                    <input type="text" name="first_name" class="form-control" placeholder="First Name..." required>
+                    <input type="text" name="first_name" class="form-control" [(ngModel)]="seller.first_name" placeholder="First Name..." required>
 
 										<span class="input-group-addon">
 											<i class="material-icons">face</i>
 										</span>
-                    <input type="text" name="other_names" placeholder="Other Names..." class="form-control" required/>
+                    <input type="text" name="other_names" placeholder="Other Names..." [(ngModel)]="seller.other_names" class="form-control" required/>
                   </div>
 
                   <div class="input-group">
 										<span class="input-group-addon">
 											<i class="material-icons">email</i>
 										</span>
-                    <input type="email" name="email" class="form-control" placeholder="Email..." required>
+                    <input type="email" name="email" [(ngModel)]="seller.email" class="form-control" placeholder="Email..." required>
 
 										<span class="input-group-addon">
 											<i class="material-icons">phone</i>
 										</span>
-                    <input type="number" name="mobile_no" placeholder="Mobile Number. Example, 0712345678" class="form-control" required/>
+                    <input type="number" name="mobile_no" [(ngModel)]="seller.mobile_no" placeholder="Mobile Number. Example, 0712345678" class="form-control" required/>
                   </div>
 
                   <div class="input-group">
 										<span class="input-group-addon">
 											<i class="material-icons">lock</i>
 										</span>
-                    <input type="password" name="password" class="form-control" placeholder="Password..." minlength="6">
+                    <input type="password" name="password" class="form-control" [(ngModel)]="seller.password" placeholder="Password..." minlength="6">
 
 										<span class="input-group-addon">
 											<i class="material-icons">lock</i>
 										</span>
-                    <input type="password" name="confirm_password" #confirm_password (keyup)="checkPassword(confirm_password.value)"
+                    <input type="password" name="confirm_password" [(ngModel)]="seller.confirm_password"
                            placeholder="Repeat Password..." class="form-control" />
                   </div>
 
@@ -111,7 +111,7 @@
 										<span class="input-group-addon">
 											<i class="material-icons">home</i>
 										</span>
-                    <input type="text" class="form-control" name="shop_name" placeholder="Enter your shop's name...">
+                    <input type="text" class="form-control" name="shop_name" [(ngModel)]="seller.shop_name" placeholder="Enter your shop's name...">
                   </div>
 
                   <div class="input-group">
@@ -131,7 +131,7 @@
                   </div>
                 </div>
                 <div class="footer text-center">
-                  <button href="#pablo" class="btn btn-success btn-lg">Register</button>
+                  <button type="submit" class="btn btn-success btn-lg">Register</button>
                 </div>
               </form>
             </div>
