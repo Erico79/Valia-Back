@@ -50,7 +50,7 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3">
             <div class="card card-signup">
-              <form class="form">
+              <form #sellerForm="ngForm" class="form">
                 <div class="header header-primary text-center">
                   <h4>Register to Sell</h4>
                   <!--<div class="social-line">-->
@@ -67,42 +67,73 @@
                 </div>
                 <p class="text-divider">Already registered? Click <a routerLink="/login">here</a> to sign in!</p>
                 <div class="content">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="material-icons">face</i>
+                      </span>
+                        <input type="text" #fname="ngModel" name="first_name" class="form-control" [(ngModel)]="seller.first_name" placeholder="First Name..." required>
+                        <span [hidden]="fname.valid || fname.pristine" class="warning-message">Enter your first name</span>
+                      </div>
+                    </div>
 
-                  <div class="input-group">
-										<span class="input-group-addon">
-											<i class="material-icons">face</i>
-										</span>
-                    <input type="text" name="first_name" class="form-control" [(ngModel)]="seller.first_name" placeholder="First Name..." required>
-
-										<span class="input-group-addon">
-											<i class="material-icons">face</i>
-										</span>
-                    <input type="text" name="other_names" placeholder="Other Names..." [(ngModel)]="seller.other_names" class="form-control" required/>
+                    <div class="col-md-6">
+                      <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="material-icons">face</i>
+                      </span>
+                        <input type="text" #oname="ngModel" name="other_names" placeholder="Other Names..." [(ngModel)]="seller.other_names" class="form-control" required/>
+                        <span [hidden]="oname.valid || oname.pristine" class="warning-message">Enter your other names</span>
+                      </div>
+                    </div>
                   </div>
 
-                  <div class="input-group">
-										<span class="input-group-addon">
-											<i class="material-icons">email</i>
-										</span>
-                    <input type="email" name="email" [(ngModel)]="seller.email" class="form-control" placeholder="Email..." required>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="material-icons">email</i>
+                        </span>
+                        <input type="email" #email="ngModel" name="email" [(ngModel)]="seller.email" class="form-control" placeholder="Email..." required>
+                        <span [hidden]="email.valid || email.pristine" class="warning-message">Enter your Email Address</span>
+                      </div>
+                    </div>
 
-										<span class="input-group-addon">
-											<i class="material-icons">phone</i>
-										</span>
-                    <input type="number" name="mobile_no" [(ngModel)]="seller.mobile_no" placeholder="Mobile Number. Example, 0712345678" class="form-control" required/>
+                    <div class="col-md-6">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="material-icons">phone</i>
+                        </span>
+                        <input type="number" #mobile_no="ngModel" name="mobile_no" [(ngModel)]="seller.mobile_no"
+                               placeholder="Mobile Number. Example, 0712345678" class="form-control" required/>
+                        <span [hidden]="mobile_no.valid || mobile_no.pristine" class="warning-message">Enter your Mobile Phone Number</span>
+                      </div>
+                    </div>
                   </div>
 
-                  <div class="input-group">
-										<span class="input-group-addon">
-											<i class="material-icons">lock</i>
-										</span>
-                    <input type="password" name="password" class="form-control" [(ngModel)]="seller.password" placeholder="Password..." minlength="6">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="material-icons">lock</i>
+                        </span>
+                        <input type="password" #password="ngModel" name="password" class="form-control" [(ngModel)]="seller.password"
+                               placeholder="Password..." minlength="6" required>
+                        <span [hidden]="password.valid || password.pristine" class="warning-message">Enter a password</span>
+                      </div>
+                    </div>
 
-										<span class="input-group-addon">
-											<i class="material-icons">lock</i>
-										</span>
-                    <input type="password" name="confirm_password" [(ngModel)]="seller.confirm_password"
-                           placeholder="Repeat Password..." class="form-control" />
+                    <div class="col-md-6">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="material-icons">lock</i>
+                        </span>
+                        <input type="password" #pass_again="ngModel" name="confirm_password" [(ngModel)]="seller.confirm_password"
+                             placeholder="Repeat Password..." class="form-control" required/>
+                        <span [hidden]="pass_again.valid || pass_again.pristine" class="warning-message">Repeat the password!</span>
+                      </div>
+                    </div>
                   </div>
 
                   <p class="text-divider">Shop Name</p>
@@ -111,7 +142,9 @@
 										<span class="input-group-addon">
 											<i class="material-icons">home</i>
 										</span>
-                    <input type="text" class="form-control" name="shop_name" [(ngModel)]="seller.shop_name" placeholder="Enter your shop's name...">
+                    <input type="text" #shop_name="ngModel" class="form-control" name="shop_name" [(ngModel)]="seller.shop_name"
+                           required placeholder="Enter your shop's name...">
+                    <span [hidden]="shop_name.valid || shop_name.pristine" class="warning-message">Enter your Shop's name</span>
                   </div>
 
                   <div class="input-group">
@@ -122,16 +155,17 @@
                   </div>
 
                   <!--If you want to add a checkbox to this form, uncomment this code-->
-
-                  <div class="checkbox">
-                      <label>
-                          <input type="checkbox" name="optionsCheckboxes" required>
-                          Agree to the <a routerLink="/terms_and_conditions">Terms and Conditions</a>.
-                      </label>
+                  <div class="checkbox input-group">
+                    <label>
+                      <input type="checkbox" #terms="ngModel" name="terms" [(ngModel)]="seller.terms" required>
+                      Agree to the <a routerLink="/terms_and_conditions">Terms and Conditions</a>.
+                    </label>
+                    <span [hidden]="terms.valid || terms.pristine" class="warning-message">You MUST agree to the Terms and Conditions!</span>
                   </div>
                 </div>
+
                 <div class="footer text-center">
-                  <button type="submit" class="btn btn-success btn-lg">Register</button>
+                  <button type="submit" class="btn btn-success btn-lg" [disabled]="!sellerForm.form.valid" (click)="newSeller(); sellerForm.reset();">Register</button>
                 </div>
               </form>
             </div>
