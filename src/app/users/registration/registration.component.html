@@ -50,7 +50,7 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3">
             <div class="card card-signup">
-              <form class="form" method="" action="">
+              <form class="form">
                 <div class="header header-primary text-center">
                   <h4>Sign Up</h4>
                   <!--<div class="social-line">-->
@@ -121,14 +121,14 @@
                     <input type="url" placeholder="Shop's url" class="form-control" disabled/>
                   </div>
 
-                  <!-- If you want to add a checkbox to this form, uncomment this code
+                  <!--If you want to add a checkbox to this form, uncomment this code-->
 
-                                    <!--<div class="checkbox">-->
-                                        <!--<label>-->
-                                            <!--<input type="checkbox" name="optionsCheckboxes" checked>-->
-                                            <!--Subscribe to newsletter-->
-                                        <!--</label>-->
-                                    <!--</div> &ndash;&gt;-->
+                  <div class="checkbox">
+                      <label>
+                          <input type="checkbox" name="optionsCheckboxes" required>
+                          Agree to the <a routerLink="/terms_and_conditions">Terms and Conditions</a>.
+                      </label>
+                  </div>
                 </div>
                 <div class="footer text-center">
                   <button href="#pablo" class="btn btn-success btn-lg">Register</button>

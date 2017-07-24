@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from '@angular/platform-browser';
 
+import {User} from './user';
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['../../assets/css/material-kit.css']
+  styleUrls: ['../../../assets/css/material-kit.css']
 })
 export class RegistrationComponent implements OnInit {
   private pass_match: boolean;
-  private form_valid: boolean;
+  // model = new User();
 
   constructor(private title: Title) {
     this.pass_match = false;
-    this.form_valid = false;
   }
 
   ngOnInit(): void {
