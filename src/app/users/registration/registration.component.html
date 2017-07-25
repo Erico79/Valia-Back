@@ -50,7 +50,7 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3">
             <div class="card card-signup">
-              <form #sellerForm="ngForm" class="form">
+              <form #sellerForm="ngForm" class="form" (ngSubmit)="onSubmit();">
                 <div class="header header-primary text-center">
                   <h4>Register to Sell</h4>
                   <!--<div class="social-line">-->
@@ -74,7 +74,7 @@
                         <i class="material-icons">face</i>
                       </span>
                         <input type="text" #fname="ngModel" name="first_name" class="form-control" [(ngModel)]="seller.first_name" placeholder="First Name..." required>
-                        <span [hidden]="fname.valid || fname.pristine" class="warning-message">Enter your first name</span>
+                        <span [hidden]="fname.valid || fname.pristine" class="warning-message">Enter your first name!</span>
                       </div>
                     </div>
 
@@ -84,7 +84,7 @@
                         <i class="material-icons">face</i>
                       </span>
                         <input type="text" #oname="ngModel" name="other_names" placeholder="Other Names..." [(ngModel)]="seller.other_names" class="form-control" required/>
-                        <span [hidden]="oname.valid || oname.pristine" class="warning-message">Enter your other names</span>
+                        <span [hidden]="oname.valid || oname.pristine" class="warning-message">Enter your other names!</span>
                       </div>
                     </div>
                   </div>
@@ -96,7 +96,7 @@
                           <i class="material-icons">email</i>
                         </span>
                         <input type="email" #email="ngModel" name="email" [(ngModel)]="seller.email" class="form-control" placeholder="Email..." required>
-                        <span [hidden]="email.valid || email.pristine" class="warning-message">Enter your Email Address</span>
+                        <span [hidden]="email.valid || email.pristine" class="warning-message">Enter your Email Address!</span>
                       </div>
                     </div>
 
@@ -107,7 +107,7 @@
                         </span>
                         <input type="number" #mobile_no="ngModel" name="mobile_no" [(ngModel)]="seller.mobile_no"
                                placeholder="Mobile Number. Example, 0712345678" class="form-control" required/>
-                        <span [hidden]="mobile_no.valid || mobile_no.pristine" class="warning-message">Enter your Mobile Phone Number</span>
+                        <span [hidden]="mobile_no.valid || mobile_no.pristine" class="warning-message">Enter your Mobile Phone Number!</span>
                       </div>
                     </div>
                   </div>
@@ -120,7 +120,7 @@
                         </span>
                         <input type="password" #password="ngModel" name="password" class="form-control" [(ngModel)]="seller.password"
                                placeholder="Password..." minlength="6" required>
-                        <span [hidden]="password.valid || password.pristine" class="warning-message">Enter a password</span>
+                        <span [hidden]="password.valid || password.pristine" class="warning-message">Enter a password!</span>
                       </div>
                     </div>
 
@@ -136,7 +136,7 @@
                     </div>
                   </div>
 
-                  <p class="text-divider">Shop Name</p>
+                  <p class="text-divider"><b>Shop Details</b></p>
 
                   <div class="input-group">
 										<span class="input-group-addon">
@@ -144,7 +144,7 @@
 										</span>
                     <input type="text" #shop_name="ngModel" class="form-control" name="shop_name" [(ngModel)]="seller.shop_name"
                            required placeholder="Enter your shop's name...">
-                    <span [hidden]="shop_name.valid || shop_name.pristine" class="warning-message">Enter your Shop's name</span>
+                    <span [hidden]="shop_name.valid || shop_name.pristine" class="warning-message">Enter your Shop's name!</span>
                   </div>
 
                   <div class="input-group">
@@ -159,13 +159,13 @@
                     <label>
                       <input type="checkbox" #terms="ngModel" name="terms" [(ngModel)]="seller.terms" required>
                       Agree to the <a routerLink="/terms_and_conditions">Terms and Conditions</a>.
-                    </label>
+                    </label>&nbsp;
                     <span [hidden]="terms.valid || terms.pristine" class="warning-message">You MUST agree to the Terms and Conditions!</span>
                   </div>
                 </div>
 
                 <div class="footer text-center">
-                  <button type="submit" class="btn btn-success btn-lg" [disabled]="!sellerForm.form.valid" (click)="newSeller(); sellerForm.reset();">Register</button>
+                  <button type="submit" class="btn btn-success btn-lg" [disabled]="!sellerForm.form.valid">Register</button>
                 </div>
               </form>
             </div>

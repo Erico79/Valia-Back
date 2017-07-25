@@ -12,27 +12,16 @@ import {Seller} from './seller';
   ]
 })
 export class RegistrationComponent implements OnInit {
-  private pass_match: boolean;
-  seller = new Seller('Eric', 'Murimi Njue', 'emurinyo@gmail.com', '0718513948', 'pass123', 'pass123', 'Ricoz Fashion', false);
+  private submitted: boolean;
+  seller = new Seller('', '', '', '', '', '', '', false);
 
-  constructor(private title: Title) {
-    this.pass_match = false;
-  }
+  constructor(private title: Title) {}
 
   ngOnInit(): void {
     this.title.setTitle('Register');
   }
 
-  checkPassword(pass1: string, pass2: string) {
-    if (pass1 === pass2) {
-      this.pass_match = true;
-    } else {
-      this.pass_match = false;
-    }
-  }
+  onSubmit(): void {
 
-  newSeller(): void {
-    alert('submitting...');
   }
-
 }
