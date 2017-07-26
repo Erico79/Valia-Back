@@ -17,6 +17,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('seller', function() {
-    return \Response::json($_POST);
+Route::post('seller', function(Request $request) {
+    return \Response::json([
+        'merchant' => $request->all(),
+        'success' => true
+    ]);
 });
